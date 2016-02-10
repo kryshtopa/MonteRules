@@ -1,0 +1,151 @@
+@import "_common/mixins.scss";
+
+@media screen and (min-device-height : 730px) {
+
+  /* --------- Section 1 --------- */
+
+  .section-1 {
+    position: relative;
+    overflow: hidden;
+    .container {
+      min-height: 600px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media screen and (max-device-width : 900px) {
+
+  /* --------- Section 1 --------- */
+
+  .section-1__h1 {
+    font-size: 3em;
+    padding-top: 20%;
+  }
+  .section-1__h2 {
+    font-size: 2.2em;
+    line-height: 1em;
+    padding: 10% 0 11% 0;
+  }
+}
+
+@media screen and (max-device-width : 750px) {
+
+  /* --------- Section 1 --------- */
+
+  .section-1__h1 {
+    font-size: 3em;
+    padding-top: 20%;
+  }
+  .section-1__h2 {
+    font-size: 2.2em;
+    line-height: 1em;
+    padding: 10% 0 11% 0;
+  }
+
+  /* --------- Section 2 --------- */
+
+  .section-2__text {
+    font-size: 1.1em;
+  }
+
+  /* --------- Section 3 --------- */
+
+  .section-3__img {
+    display: none;
+  }
+  .section-3__input {
+    width: 100%;
+  }
+  .section-3__input-text {
+    margin-left: 0;
+    width: 100%;
+  }
+  .section-3__item {
+    .section-3__text {
+      width: 100%;
+    }
+  }
+  .section-3__text {
+    font-size: 1.1em;
+  }
+
+  /* --------- Footer --------- */
+
+  .site-footer__copyright {
+    font-size: 0.6em;
+  }
+}
+
+@media screen and (max-device-width : 400px) {
+
+  /* --------- General Styles --------- */
+
+  .section__h2 {
+    font-size: 1.8em;
+  }
+  .container_navigation {
+    width: 100%;
+  }
+  .navigation__link {
+    font-size: 0.8em;
+  }
+
+  /* --------- Section 1 --------- */
+
+  .section-1 {
+    position: relative;
+    overflow: hidden;
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .section-1__h1 {
+    font-size: 2em;
+  }
+  .section-1__h2 {
+    font-size: 1.5em;
+    line-height: 1em;
+  }
+  .section-1__button {
+    width: 100%;
+    padding: 5%;
+    font-size: 2em;
+  }
+
+  /* --------- Section 2 --------- */
+
+  .section-2__item {
+    width: 100%;
+    margin-left: 0%;
+    margin-bottom: 20%;
+    &last-child {
+      margin-bottom: 5%;
+    }
+  }
+  .section-2__img {
+    margin-bottom: 4%;
+  }
+  .section-2__img-link {
+    @include prefix(box-shadow, 0 0 10px black);
+  }
+  .section-2__text {
+    @include prefix(box-shadow, 0 0 10px black);
+  }
+
+  /* --------- Section 4 --------- */
+
+  .section-4__item {
+    margin-bottom: 10%;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+}

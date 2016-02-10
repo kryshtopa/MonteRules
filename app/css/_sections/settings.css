@@ -1,0 +1,232 @@
+/*--------------------------------------------------------------
+Section Section
+--------------------------------------------------------------*/
+.settings {
+  background-color: white;
+  min-width: 50%;
+  min-height: 100%;
+  float: right;
+  position: relative;
+  background-color: lightgoldenrodyellow;
+}
+
+.settings__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.settings__item {
+  padding: 0;
+  margin: 0;
+  min-height: 25%;
+  position: relative;
+  -webkit-border-bottom: 1px solid white;
+  -moz-border-bottom: 1px solid white;
+  -ms-border-bottom: 1px solid white;
+  -o-border-bottom: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.settings__item:last-child {
+  -webkit-border-bottom: none;
+  -moz-border-bottom: none;
+  -ms-border-bottom: none;
+  -o-border-bottom: none;
+  border-bottom: none;
+}
+
+.settings__section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.settings__section {
+  width: 100%;
+}
+
+.add__addText, .add__addPhoto, .text-settings__font-strict,
+.text-settings__font-hand, .submit__link {
+  display: inline-block;
+  width: 47.5%;
+  background-color: limegreen;
+  margin: 0;
+  padding: 3%;
+  font-family: OpenSans-Semibold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+}
+.add__addText:hover, .add__addPhoto:hover, .text-settings__font-strict:hover,
+.text-settings__font-hand:hover, .submit__link:hover {
+  background-color: lightgreen;
+}
+
+.add__addPhoto {
+  margin-right: 5%;
+}
+
+.add__input {
+  cursor: pointer;
+  opacity: 0;
+  width: 47.5%;
+  height: 42.5%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.add__type {
+  width: 100%;
+  padding: 3.5% 15px;
+  margin-top: 5%;
+  outline: none;
+  -webkit-border: 1px solid burlywood;
+  -moz-border: 1px solid burlywood;
+  -ms-border: 1px solid burlywood;
+  -o-border: 1px solid burlywood;
+  border: 1px solid burlywood;
+  text-transform: uppercase;
+  font-size: 0.7em;
+}
+.add__type:active {
+  -webkit-border: 1px solid darkgoldenrod;
+  -moz-border: 1px solid darkgoldenrod;
+  -ms-border: 1px solid darkgoldenrod;
+  -o-border: 1px solid darkgoldenrod;
+  border: 1px solid darkgoldenrod;
+}
+
+.text-settings__font-type {
+  margin-top: 5%;
+}
+
+.text-settings__font-type,
+.text-settings__font-size {
+  margin-bottom: 3%;
+}
+
+.text-settings__font-strict,
+.text-settings__font-hand {
+  background-color: burlywood;
+  vertical-align: top;
+}
+.text-settings__font-strict:hover,
+.text-settings__font-hand:hover {
+  cursor: pointer;
+  background-color: darkgoldenrod;
+}
+
+.text-settings__font-strict {
+  margin-right: 5%;
+  font-family: OpenSans-Light;
+  text-transform: none;
+  font-size: 1.1em;
+}
+
+.text-settings__font-hand {
+  font-family: TeddyBear;
+  text-transform: none;
+  font-size: 0.7em;
+}
+
+div.colorPicker-picker {
+  margin-top: 5%;
+}
+
+.text-settings__opacity {
+  margin-top: 3%;
+}
+
+.submit__link {
+  width: 100%;
+}
+
+.ui-slider {
+  width: 97%;
+  margin-left: 1%;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: 0.9em !important;
+  margin-left: -0.1em !important;
+  background-color: limegreen;
+  cursor: pointer !important;
+  outline: none;
+}
+.ui-slider-horizontal .ui-slider-handle:hover {
+  cursor: pointer;
+  background-color: lightgreen;
+}
+
+.ui-slider .ui-slider-handle {
+  width: 10px !important;
+  height: 10px  !important;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.ui-slider-pip {
+  background-color: burlywood;
+  color: white !important;
+  width: 5px !important;
+  height: 5px !important;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: 0 !important;
+  top: 18px !important;
+}
+
+.ui-slider-line {
+  width: 0 !important;
+}
+
+.popup {
+  display: none;
+  background-color: white;
+  padding: 2%;
+  width: 90%;
+  height: 100%;
+  position: relative;
+}
+
+.popup__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup__item {
+  display: inline-block;
+  background-color: burlywood;
+  color: white;
+  padding: 1% 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  cursor: pointer;
+}
+.popup__item:last-child {
+  margin-bottom: 0;
+}
+.popup__item:hover {
+  background-color: darkgoldenrod;
+}

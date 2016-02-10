@@ -1,0 +1,8 @@
+{
+  "name": "monterules",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "normalize-css": "normalize.css#~3.0.3",
+    "watermark": "^1.0.1"
+  }
+}

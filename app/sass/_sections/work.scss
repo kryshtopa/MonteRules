@@ -1,0 +1,87 @@
+@import "_common/mixins.scss";
+
+/*--------------------------------------------------------------
+Work Section
+--------------------------------------------------------------*/
+
+.work {
+  background-color: white;
+  min-width: 50%;
+  min-height: 100%;
+  float: left;
+}
+.wrapper {
+  min-width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+
+.site-footer {
+  height: 60px;
+  position: relative;
+}
+.work__title {
+  height: 20%;
+  position: relative;
+}
+.site-footer__copyright,
+.title__text,
+.work__area {
+  @include absolute-center;
+  width: 80%;
+  font-family: TeddyBear;
+  font-size: 2.7em;
+  line-height: 1em;
+  color: lightslategray;
+  text-align: center;
+}
+.site-footer__copyright {
+  font-size: 0.7em;
+}
+.site-footer__link {
+  text-decoration: none;
+  color: burlywood;
+  &:hover {
+    cursor: pointer;
+    color: darkgoldenrod;
+  }
+}
+
+.work__area {
+  background-color: white;
+  width: 101%;
+  height: 60%;
+  overflow: hidden;
+}
+.area__img {
+  max-height: 100%;
+  float: left;
+  @include absolute-center;
+  z-index: -1;
+}
+.area__text {
+  color: #ffffff;
+  line-height: 30px;
+  font-size: 20;
+  text-transform: none;
+  font-family: OpenSans-Light;
+}
+.work__download {
+  display: none;
+  font-family: FontAwesome;
+  font-size: 2em;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 14%;
+  color: lightgreen;
+  text-decoration: none;
+  &:hover {
+    color: limegreen;
+    cursor: pointer;
+  }
+}
+.ya-share2 {
+  margin: 2% 0;
+}
