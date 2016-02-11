@@ -77,20 +77,27 @@ Work Section
   font-family: OpenSans-Light;
 }
 
+.work__refresh,
 .work__download {
   display: none;
   font-family: FontAwesome;
   font-size: 2em;
   position: absolute;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%);
   bottom: 14%;
   color: lightgreen;
   text-decoration: none;
 }
+.work__refresh:hover,
 .work__download:hover {
   color: limegreen;
   cursor: pointer;
+}
+
+.work__refresh {
+  left: 40%;
+  font-size: 1.9em;
 }
 
 .ya-share2 {

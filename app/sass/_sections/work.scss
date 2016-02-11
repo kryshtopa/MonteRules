@@ -15,8 +15,6 @@ Work Section
   min-height: 100%;
   position: relative;
 }
-
-
 .site-footer {
   height: 60px;
   position: relative;
@@ -67,12 +65,13 @@ Work Section
   text-transform: none;
   font-family: OpenSans-Light;
 }
+.work__refresh,
 .work__download {
   display: none;
   font-family: FontAwesome;
   font-size: 2em;
   position: absolute;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%);
   bottom: 14%;
   color: lightgreen;
@@ -81,6 +80,10 @@ Work Section
     color: limegreen;
     cursor: pointer;
   }
+}
+.work__refresh {
+  left: 40%;
+  font-size: 1.9em;
 }
 .ya-share2 {
   margin: 2% 0;

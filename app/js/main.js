@@ -41,6 +41,7 @@ var watermark = (function() {
       $('.area__text').hide();
       $('.work__download')
         .show()
+        .css({"display": "inline-block"})
         .on('click', function (e) {
           e.preventDefault();
 
@@ -50,6 +51,13 @@ var watermark = (function() {
           a.download = 'MonteRules.jpeg';
 
           a.click()
+        });
+      $('.work__refresh')
+        .show()
+        .css({"display": "inline-block"})
+        .on('click', function (e) {
+          e.preventDefault();
+          window.location.reload();
         });
 
     });

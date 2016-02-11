@@ -29,12 +29,12 @@ var filter = require('gulp-filter'),
 
 // Картинки
 		gulp.task('images', function () {
-		  return gulp.src('app/images/**/*')
+		  return gulp.src('app/img/**/*')
 		    .pipe(imagemin({
 		      progressive: true,
 		      interlaced: true
 		    }))
-		    .pipe(gulp.dest('dist/images'));
+		    .pipe(gulp.dest('dist/img'));
 		});
 
 // Остальные файлы, такие как favicon.ico и пр.

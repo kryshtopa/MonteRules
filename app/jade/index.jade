@@ -1,4 +1,4 @@
-html(lang="RU-ru")
+html(lang="RU-ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
   head
     <meta charset="UTF-8">
     <!--IE-to-EDGE-->
@@ -10,7 +10,29 @@ html(lang="RU-ru")
     <meta name="description" content="Правила жизни в Черногории - создай свой мем">
     <meta name="keywords" content="Черногория, 10 заповедей черногорца, заповеди черногорца, Черногория 10 заповедей, правида жизни черногория">
     <meta name="author" content="Dmitry Kryshtopa">
+    <!--facebook img-->
+    <meta property="og:image" content="img/monterules.png" />
     <!--favicon.ico-->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
     
     <!-- build:css fonts/fonts.min.css -->
     <link rel="stylesheet" href="css/fonts/stylesheet.css">
@@ -30,6 +52,7 @@ html(lang="RU-ru")
     <!-- endbuild -->
     
 body
+  <script src="js/fb.js"></script>
   #hideAll
   .work
     .wrapper
@@ -38,8 +61,8 @@ body
       section.work__area
         img(src='#' alt='Правила жизни в Черногории').area__img#areaImg
         .area__text Жизнь в Черногории
-      a.work__download(href="#") 
-        &#xF01A;   
+      a.work__download(href="#") &#xF01A;
+      a.work__refresh(href="#") &#xF021;   
     footer.site-footer
       .site-footer__copyright Made by 
         a.site-footer__link(href='http://kryshtopa.com' target="_blank") Dmitry Kryshtopa
@@ -60,7 +83,7 @@ body
           section.settings__section.settings__section_text-settings
             .text-settings__font-type
               a.text-settings__font-strict.active Шрифт
-              a.text-settings__font-hand Шрифт   
+              a.text-settings__font-hand Шрифт
             .text-settings__font-size
         li.settings__item
           section.settings__section.settings__section_color-settings
@@ -103,5 +126,5 @@ body
   <script src="js/main.js"></script>
   <!-- endbuild -->
 
-  <script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://yastatic.net/share2/share.js" charset="utf-8"></script>
