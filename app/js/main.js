@@ -1,5 +1,6 @@
 $(window).load(function() {
   document.getElementById("hideAll").style.display = "none";
+  $('.tooltip').show();
 });
 
 $(document).ready(function(){
@@ -11,7 +12,9 @@ $(document).ready(function(){
 
 var watermark = (function() {
   var init = function () {
-    $('.submit__link').on('click', function() {
+    $('.submit__link').on('click', function(e) {
+      e.preventDefault();
+
       var srct = $('.area__text'),
           srci = $('.area__img'),
           imgH = 600,
@@ -45,12 +48,12 @@ var watermark = (function() {
         .on('click', function (e) {
           e.preventDefault();
 
-          var a  = document.createElement('a'),
-              gh = $('.area__img').attr('src');
-          a.href = gh;
-          a.download = 'MonteRules.jpeg';
-
-          a.click()
+          var link = document.createElement('a');
+          var a = $('.area__img').attr('src');
+          link.href = a;
+          link.download = 'MonteRules.jpeg';
+          document.body.appendChild(link);
+          link.click();
         });
       $('.work__refresh')
         .show()
@@ -59,7 +62,6 @@ var watermark = (function() {
           e.preventDefault();
           window.location.reload();
         });
-
     });
 
   };
@@ -73,6 +75,10 @@ var watermark = (function() {
 var settings = (function() {
   var init = function () {
 
+    $('.add__input').on('click', function() {
+      $('.tooltip_photo').hide();
+    });
+
     $('.add__type').bind('change paste keyup', function() {
       if ($(this).val().length < 300)
       $('.area__text').html($(this).val());
@@ -84,7 +90,6 @@ var settings = (function() {
 
     $('.area__text')
       .draggable({
-        // snap: '.area__img',
         axis: "y",
         containment: "parent"
       })
@@ -97,6 +102,8 @@ var settings = (function() {
     $('.text-settings__font-strict').on('click', function(e) {
       e.preventDefault
 
+      $('.tooltip_font').hide();
+
       $(this).addClass('active');
       $('.text-settings__font-hand').removeClass('active');
       $('.area__text').css({"font-family": "OpenSans-Light"})
@@ -104,12 +111,17 @@ var settings = (function() {
     $('.text-settings__font-hand').on('click', function(e) {
       e.preventDefault
 
+      $('.tooltip_font').hide();
+
       $(this).addClass('active');
       $('.text-settings__font-strict').removeClass('active');
       $('.area__text').css({"font-family": "TeddyBear"})
     });
 
     $('.colorpicker').colorPicker();
+    $('.colorPicker-swatch').on('click', function() {
+      $('.tooltip_color').hide();
+    });
 
     $(".text-settings__opacity")
         .slider({
@@ -158,6 +170,7 @@ var settings = (function() {
     $(".add__addText").on('click', function (e) {
       e.preventDefault();
 
+      $('.tooltip_text').hide();
       $('.popup').bPopup({
         speed: 300,
         transition: 'slideIn',
@@ -180,7 +193,7 @@ var settings = (function() {
     	//	rehide the image and remove its current "src",
     	//	this way if the new image doesn't load,
     	//	then the image element is "gone" for now
-    	// $('.area__img').attr('src', '').hide();
+    	$('.area__img').attr('src', '').hide();
     	if (this.files && this.files[0]) {
     		var reader = new FileReader();
     		$(reader).load(function(e) {

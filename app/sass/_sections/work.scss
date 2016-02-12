@@ -7,7 +7,7 @@ Work Section
 .work {
   background-color: white;
   min-width: 50%;
-  min-height: 100%;
+  height: 100%;
   float: left;
 }
 .wrapper {
@@ -45,7 +45,6 @@ Work Section
     color: darkgoldenrod;
   }
 }
-
 .work__area {
   background-color: white;
   width: 101%;
@@ -61,7 +60,7 @@ Work Section
 .area__text {
   color: #ffffff;
   line-height: 30px;
-  font-size: 20;
+  font-size: 20px;
   text-transform: none;
   font-family: OpenSans-Light;
 }

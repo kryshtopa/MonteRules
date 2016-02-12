@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 html(lang="RU-ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
   head
     <meta charset="UTF-8">
@@ -51,80 +52,83 @@ html(lang="RU-ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/n
     <!-- endbower -->
     <!-- endbuild -->
     
-body
-  <script src="js/fb.js"></script>
-  #hideAll
-  .work
-    .wrapper
-      header.work__title
-        .title__text Правила жизни в Черногории
-      section.work__area
-        img(src='#' alt='Правила жизни в Черногории').area__img#areaImg
-        .area__text Жизнь в Черногории
-      a.work__download(href="#") &#xF01A;
-      a.work__refresh(href="#") &#xF021;   
-    footer.site-footer
-      .site-footer__copyright Made by 
-        a.site-footer__link(href='http://kryshtopa.com' target="_blank") Dmitry Kryshtopa
-        .ya-share2(data-services="vkontakte,facebook,odnoklassniki,twitter,lj" data-counter="")
-        
+  body
+    <script src="js/fb.js"></script>
+    #hideAll
+    .work
+      .wrapper
+        header.work__title
+          .title__text Правила жизни в Черногории
+        section.work__area
+          img(src='#' alt='Правила жизни в Черногории').area__img#areaImg
+          .area__text Жизнь в Черногории
+        a.work__download(href="#" download) &#xF01A;
+        a.work__refresh(href="#") &#xF021;
+      footer.site-footer
+        .site-footer__copyright Made by 
+          a.site-footer__link(href='http://kryshtopa.com' target="_blank") Dmitry Kryshtopa
+          .ya-share2(data-services="vkontakte,facebook,odnoklassniki,twitter,lj" data-counter="")
+          
 
-  .settings.active
-    .wrapper
-      ul.settings__list
-        li.settings__item
-          section.settings__section.settings__section_add
-            //- a.add__addPhoto(href="#") Фото
-            .add__addPhoto Фото
-              input.add__input(type='file')
-            a.add__addText(href="#") Текст 
-            input.add__type(type="text" placeholder="Написать свое правило") 
-        li.settings__item
-          section.settings__section.settings__section_text-settings
-            .text-settings__font-type
-              a.text-settings__font-strict.active Шрифт
-              a.text-settings__font-hand Шрифт
-            .text-settings__font-size
-        li.settings__item
-          section.settings__section.settings__section_color-settings
-            input.colorpicker.colorpicker_text(type="text" name="colorText" value="#ffffff")
-            .text-settings__opacity
-        li.settings__item
-          section.settings__section.settings__section_submit
-            a.submit__link(href="#") Применить
-            
-  .popup
-    ul.popup__list
-      li.popup__item Человек рождается утомлённым, и живет, чтобы отдыхать
-      li.popup__item Люби кровать свою, как самого себя
-      li.popup__item Днём отдыхай, чтобы ночью ты смог хорошо выспаться
-      li.popup__item Не работай - работа убивает
-      li.popup__item Если увидишь отдыхающего - помоги ему
-      li.popup__item Если увидишь выпивающих и закусывающих - присоединяйся, помоги им. А если увидишь работающих - немедленно уходи: им нельзя мешать
-      li.popup__item Работай меньше, чем можешь, и передавай свою работу другому
-      li.popup__item Если у тебя внезапно появится желание работать - сядь и успокойся. Оно пройдёт само
-      li.popup__item В тени - спасение. Отдыхая в её объятиях, ещё никто не умер
-      li.popup__item Труд ведет к болезням - не умри молодым
+    .settings.active
+      .wrapper
+        ul.settings__list
+          li.settings__item
+            section.settings__section.settings__section_add
+              .add__addPhoto Фото
+                input.add__input(type='file')
+                .tooltip.tooltip_photo 1
+              a.add__addText(href="#") Текст 
+                .tooltip.tooltip_text 2
+              input.add__type(type="text" placeholder="Написать свое правило") 
+          li.settings__item
+            section.settings__section.settings__section_text-settings
+              .text-settings__font-type
+                a.text-settings__font-strict.active Шрифт
+                  .tooltip.tooltip_font 3
+                a.text-settings__font-hand Шрифт
+              .text-settings__font-size
+          li.settings__item
+            section.settings__section.settings__section_color-settings
+              input.colorpicker.colorpicker_text(type="text" name="colorText" value="#ffffff")
+              .text-settings__opacity
+                .tooltip.tooltip_color 4
+          li.settings__item
+            section.settings__section.settings__section_submit
+              a.submit__link(href="#") Применить
+                .tooltip.tooltip_submit 5
+              
+    .popup
+      ul.popup__list
+        li.popup__item Человек рождается утомлённым, и живет, чтобы отдыхать
+        li.popup__item Люби кровать свою, как самого себя
+        li.popup__item Днём отдыхай, чтобы ночью ты смог хорошо выспаться
+        li.popup__item Не работай - работа убивает
+        li.popup__item Если увидишь отдыхающего - помоги ему
+        li.popup__item Если увидишь выпивающих и закусывающих - присоединяйся, помоги им. А если увидишь работающих - немедленно уходи: им нельзя мешать
+        li.popup__item Работай меньше, чем можешь, и передавай свою работу другому
+        li.popup__item Если у тебя внезапно появится желание работать - сядь и успокойся. Оно пройдёт само
+        li.popup__item В тени - спасение. Отдыхая в её объятиях, ещё никто не умер
+        li.popup__item Труд ведет к болезням - не умри молодым
+          
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">document.getElementById("hideAll").style.display = "block";</script> 
         
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  </script>
-  <script type="text/javascript">document.getElementById("hideAll").style.display = "block";</script> 
-      
-  <!-- build:js js/vendor.min.js -->            
-  <!-- bower:js -->
-  <script src="bower/jquery/dist/jquery.js"></script>
-  <script src="bower/bPopup/jquery.bpopup.js"></script>
-  <script src="bower/jquery-ui/jquery-ui.min.js"></script>
-  <script src="bower/jquery-ui/ui/slider.js"></script>
-  <script src="bower/jQuery-ui-Slider-Pips/dist/jquery-ui-slider-pips.min.js"></script>
-  <script src="bower/watermark/dist/jquery.watermark.js"></script>
-  <script src="bower/colorpicker/js/jquery.colorPicker.js"></script>
-  <!-- endbower -->
-  <!-- endbuild -->
-  
-  <!-- build:js js/main.min.js -->
-  <script src="js/main.js"></script>
-  <!-- endbuild -->
+    <!-- build:js js/vendor.min.js -->            
+    <!-- bower:js -->
+    <script src="bower/jquery/dist/jquery.js"></script>
+    <script src="bower/bPopup/jquery.bpopup.js"></script>
+    <script src="bower/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower/jquery-ui/ui/slider.js"></script>
+    <script src="bower/jQuery-ui-Slider-Pips/dist/jquery-ui-slider-pips.min.js"></script>
+    <script src="bower/watermark/dist/jquery.watermark.js"></script>
+    <script src="bower/colorpicker/js/jquery.colorPicker.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js js/main.min.js -->
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
 
-  <script type="text/javascript" src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="https://yastatic.net/share2/share.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://yastatic.net/share2/share.js" charset="utf-8"></script>
