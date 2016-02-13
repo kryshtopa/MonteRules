@@ -56,6 +56,8 @@ Work Section
   float: left;
   @include absolute-center;
   z-index: -1;
+  font-family: OpenSans-Light;
+  font-size: 0.7em;
 }
 .area__text {
   color: #ffffff;
@@ -86,4 +88,7 @@ Work Section
 }
 .ya-share2 {
   margin: 2% 0;
+}
+.ui-draggable {
+  cursor:pointer;
 }

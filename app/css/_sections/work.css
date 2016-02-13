@@ -67,6 +67,8 @@ Work Section
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
+  font-family: OpenSans-Light;
+  font-size: 0.7em;
 }
 
 .area__text {
@@ -102,4 +104,8 @@ Work Section
 
 .ya-share2 {
   margin: 2% 0;
+}
+
+.ui-draggable {
+  cursor: pointer;
 }

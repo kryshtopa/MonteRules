@@ -7,7 +7,7 @@ html, body {
   height: 100%;
   font-size: 16px;
   font-family: OpenSans-Regular;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /*--------------------------------------------------------------
@@ -111,6 +111,8 @@ Work Section
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
+  font-family: OpenSans-Light;
+  font-size: 0.7em;
 }
 
 .area__text {
@@ -146,6 +148,10 @@ Work Section
 
 .ya-share2 {
   margin: 2% 0;
+}
+
+.ui-draggable {
+  cursor: pointer;
 }
 
 /*--------------------------------------------------------------
