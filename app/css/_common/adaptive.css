@@ -8,6 +8,10 @@
   }
 }
 @media screen and (max-device-width: 550px) {
+  html, body {
+    overflow-y: visible;
+  }
+
   .work {
     min-width: 100%;
   }

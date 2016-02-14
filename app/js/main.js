@@ -1,3 +1,16 @@
+var areaImg = $('.area__img'),
+    areaText = $('.area__text'),
+    addInput = $('.add__input'),
+    addPhoto = $('.add__addPhoto'),
+    colorPicker = $('.colorpicker'),
+    popUp = $('.popup'),
+    fontStrict = $('.text-settings__font-strict'),
+    fontHand = $('.text-settings__font-hand'),
+    tipPhoto = $('.tooltip_photo'),
+    tipFont = $('.tooltip_font'),
+    addType = $('.add__type'),
+    submitLink = $('.submit__link');
+
 $(window).load(function() {
   document.getElementById("hideAll").style.display = "none";
   $('.tooltip').show();
@@ -12,56 +25,84 @@ $(document).ready(function(){
 
 var watermark = (function() {
   var init = function () {
-    $('.submit__link').on('click', function(e) {
+    submitLink.on('click', function(e) {
       e.preventDefault();
 
-      var srct = $('.area__text'),
-          srci = $('.area__img'),
-          imgH = 600,
-          mult = srci.outerHeight() / imgH,
-          size = parseInt(srct.css('font-size').slice(0,-2)) / mult,
-          colr = srct.css('color'),
-          posn = srct.position().top,
-          grav = "n";
+      if (areaImg.attr('src').length > 1) {
+        var srct = areaText,
+        srci = areaImg,
+        imgH = 600,
+        mult = srci.outerHeight() / imgH,
+        size = parseInt(srct.css('font-size').slice(0,-2)) / mult,
+        colr = srct.css('color'),
+        posn = srct.position().top,
+        grav = "n";
 
-      text = srct.html();
+        text = srct.html();
 
-      $('.area__img').watermark({
-        text: text,
-        textColor: colr,
-        textBg: 'rgba(0, 0, 0, 0)',
-        textWidth: srci.outerWidth() / mult - 50,
-        outputHeight: imgH,
-        gravity: grav,
-        textSize: size,
-        opacity: 1,
-        margin: posn / mult
-      });
-
-      $(".settings").css({"min-width": "0%"});
-      $(".work").css({"min-width": "100%"});
-      $(".ui-slider-handle").hide();
-      $('.area__text').hide();
-      $('.work__download')
-        .show()
-        .css({"display": "inline-block"})
-        .on('click', function (e) {
-          e.preventDefault();
-
-          var link = document.createElement('a');
-          var a = $('.area__img').attr('src');
-          link.href = a;
-          link.download = 'MonteRules.jpeg';
-          document.body.appendChild(link);
-          link.click();
+        areaImg.watermark({
+          text: text,
+          textColor: colr,
+          textBg: 'rgba(0, 0, 0, 0)',
+          textWidth: srci.outerWidth() / mult - 50,
+          outputHeight: imgH,
+          gravity: grav,
+          textSize: size,
+          opacity: 1,
+          margin: posn / mult
         });
-      $('.work__refresh')
-        .show()
-        .css({"display": "inline-block"})
-        .on('click', function (e) {
-          e.preventDefault();
-          window.location.reload();
-        });
+
+        $(".settings").css({"min-width": "0%"});
+        $(".work").css({"min-width": "100%"});
+        $(".ui-slider-handle").hide();
+        areaText.hide();
+
+        if (window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./) || window.navigator.userAgent.indexOf('Edge/') > 0) {
+          $('.work__refresh')
+            .show()
+            .css({"left": "50%"})
+            .on('click', function (e) {
+              e.preventDefault();
+              window.location.reload();
+            });
+        } else {
+          $('.work__download')
+            .show()
+            .css({"display": "inline-block"})
+            .on('click', function (e) {
+              e.preventDefault();
+
+              var link = document.createElement('a');
+              var a = areaImg.attr('src');
+              link.href = a;
+              link.download = 'MonteRules.jpeg';
+              document.body.appendChild(link);
+              link.click();
+            });
+          $('.work__refresh')
+            .show()
+            .css({"display": "inline-block"})
+            .on('click', function (e) {
+              e.preventDefault();
+              window.location.reload();
+            });
+        }
+      } else if (!(window.ActiveXObject) && "ActiveXObject" in window) {
+        $(this)
+          .addClass('hvr-sweep-to-right');
+        addInput
+          .css({'width': '100%', 'height': '100%'});
+      } else {
+        $(this)
+          .addClass('hvr-sweep-to-right');
+        addInput
+          .css({'width': '100%', 'height': '100%'});
+        addPhoto
+          .addClass('hvr-pulse')
+          .css({'padding': '2.8%'});
+        tipPhoto
+          .css({'left': '-10%', 'top': '-45%'});
+      }
     });
 
   };
@@ -75,20 +116,29 @@ var watermark = (function() {
 var settings = (function() {
   var init = function () {
 
-    $('.add__input').on('click', function() {
-      $('.tooltip_photo').hide();
+    addInput.on('click', function() {
+      submitLink
+        .removeClass('hvr-sweep-to-right');
+      addInput
+        .focus()
+        .css({'width': '47.5%', 'height': '42.5%'});
+      addPhoto
+        .removeClass('hvr-pulse')
+        .css({'padding': "3%"});
+      tipPhoto
+        .hide();
     });
 
-    $('.add__type').bind('change paste keyup', function() {
+    addType.bind('change paste keyup', function() {
       if ($(this).val().length < 300)
-      $('.area__text').html($(this).val());
+      areaText.html($(this).val());
     });
 
-    $('.colorpicker').bind('change', function() {
-      $('.area__text').css({"color": $('.colorpicker').val()});
+    colorPicker.bind('change', function() {
+      areaText.css({"color": colorPicker.val()});
     });
 
-    $('.area__text')
+    areaText
       .draggable({
         axis: "y",
         containment: "parent"
@@ -99,26 +149,26 @@ var settings = (function() {
         at: "center center"
       });
 
-    $('.text-settings__font-strict').on('click', function(e) {
+    fontStrict.on('click', function(e) {
       e.preventDefault
 
-      $('.tooltip_font').hide();
+      tipFont.hide();
 
       $(this).addClass('active');
-      $('.text-settings__font-hand').removeClass('active');
-      $('.area__text').css({"font-family": "OpenSans-Light"})
+      fontHand.removeClass('active');
+      areaText.css({"font-family": "OpenSans-Light"})
     });
-    $('.text-settings__font-hand').on('click', function(e) {
+    fontHand.on('click', function(e) {
       e.preventDefault
 
-      $('.tooltip_font').hide();
+      tipFont.hide();
 
       $(this).addClass('active');
-      $('.text-settings__font-strict').removeClass('active');
-      $('.area__text').css({"font-family": "TeddyBear"})
+      fontStrict.removeClass('active');
+      areaText.css({"font-family": "TeddyBear"})
     });
 
-    $('.colorpicker').colorPicker();
+    colorPicker.colorPicker();
     $('.colorPicker-swatch').on('click', function() {
       $('.tooltip_color').hide();
     });
@@ -171,7 +221,7 @@ var settings = (function() {
       e.preventDefault();
 
       $('.tooltip_text').hide();
-      $('.popup').bPopup({
+      popUp.bPopup({
         speed: 300,
         transition: 'slideIn',
         transitionClose: 'slideBack',
@@ -184,20 +234,20 @@ var settings = (function() {
     $(".popup__item").on('click', function (e) {
       e.preventDefault();
 
-      $('.area__text').html($(this).html());
-      $('.add__type').val($(this).html());
-      $('.popup').bPopup().close();
+      areaText.html($(this).html());
+      addType.val($(this).html());
+      popUp.bPopup().close();
     })
 
     function readURL() {
     	//	rehide the image and remove its current "src",
     	//	this way if the new image doesn't load,
     	//	then the image element is "gone" for now
-    	$('.area__img').attr('src', '').hide();
+    	areaImg.attr('src', '').hide();
     	if (this.files && this.files[0]) {
     		var reader = new FileReader();
     		$(reader).load(function(e) {
-    			$('.area__img')
+    			areaImg
     				//	first we set the attribute of "src" thus changing the image link
     				.attr('src', e.target.result)	//	this will now call the load event on the image
     		});
@@ -206,7 +256,7 @@ var settings = (function() {
     }
 
     //	below makes use of jQuery chaining. This means the same element is returned after each method, so we don't need to call it again
-    $('.area__img')
+    areaImg
     	//	here we first set a "load" event for the image that will cause it change it's height to a set variable
     	//		and make it "show" when finished loading
     	.load(function(e) {
@@ -214,8 +264,8 @@ var settings = (function() {
     		$(this)
     			//	now for the next "method" in the chain, we show the image when loaded
     			.show();	//	just that simple
-        $('.area__text')
-          .css({"width": $('.area__img').outerWidth() - 50})
+        areaText
+          .css({"width": areaImg.outerWidth() - 50})
           .position({
             of: ".area__img",
             my: "center center",
